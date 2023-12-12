@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../johns/Documents/PaginaWebIoT/fondo.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+}
+p.textos
+{
+	/*Cambia el tipo de letra*/
+	font-family: 'Noto Sans Mono', monospace;
+	/*Cambia el color de la letra del texto*/
+	color:#cecfd0;
+	/*cambia el tamaño del texto*/
+	font-size: 25px;
+	/*Texto justificado*/
+	text-align: center;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:250px;
+	padding-right:250px;
+	
+}
+/*Este bloque cambia el estilo de los botones que cambian de html*/
+button.siguiente
+{
+	/*cambia el color del fondo*/
+	background-color:#979797;
+	/*Tamaño de la letra*/
+	font-size:25px;
+	/*cambia el tamaño del boton*/
+	padding: 20px 15px;
+	
+}
+
+button.siguiente1
+{
+	/*cambia el color del fondo*/
+	background-color:#979797;
+	/*Tamaño de la letra*/
+	font-size:25px;
+	/*cambia el tamaño del boton*/
+	padding: 20px 15px;
+	
+}
+button.siguiente2
+{
+	/*cambia el color del fondo*/
+	background-color:#979797;
+	/*Tamaño de la letra*/
+	font-size:25px;
+	/*cambia el tamaño del boton*/
+	padding: 20px 15px;
+	
+}
+button.siguiente3
+{
+	/*cambia el color del fondo*/
+	background-color:#979797;
+	/*Tamaño de la letra*/
+	font-size:25px;
+	/*cambia el tamaño del boton*/
+	padding: 20px 15px;
+	
+}
+button.siguiente4
+{
+	/*cambia el color del fondo*/
+	background-color:#979797;
+	/*Tamaño de la letra*/
+	font-size:25px;
+	/*cambia el tamaño del boton*/
+	padding: 20px 15px;
+	
+}
+button.siguiente5
+{
+	/*cambia el color del fondo*/
+	background-color:#979797;
+	/*Tamaño de la letra*/
+	font-size:25px;
+	/*cambia el tamaño del boton*/
+	padding: 20px 15px;
+	
+}

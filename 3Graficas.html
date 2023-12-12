@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/Style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="raphael-2.1.4.min.js"></script>
+<script src="justgage.js"></script>
+
+<script>
+var accessToken = "8349d25c123ff148f2a822f684bd670fa9b0c7a8";
+var deviceID = "2f0033000d51353532343635"
+
+var url = "https://api.particle.io/v1/devices/" + deviceID + "/temp_Plantas";
+var url2= "https://api.particle.io/v1/devices/" + deviceID + "/humedad_Plantas";
+
+function callback(data, status){
+    if (status == "success") {
+        temp = parseFloat(data.result);
+        temp = temp.toFixed(2);
+        g.refresh(temp);
+        setTimeout(getReading, 1000);
+    }
+    else {
+        alert("There was a problem");
+    }
+}
+function getReading(){
+    $.get(url, {access_token: accessToken}, callback);
+}
+
+function callback2(data, status){
+    if (status == "success") {
+        temp = parseFloat(data.result);
+        temp = temp.toFixed(2);
+        g2.refresh(temp);
+        setTimeout(getReading2, 1000);
+    }
+    else {
+        alert("There was a problem");
+    }
+}
+function getReading2(){
+    $.get(url2, {access_token: accessToken}, callback2);
+}
+
+
+</script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://www.ngenespanol.com/wp-content/uploads/2023/08/las-plantas-se-mueven-por-estos-importantes-motivos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        .switch-container {
+            display: inline-block;
+            padding: 100px;
+            background-color: rgba(3, 8, 56, 0.548);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: rgb(29, 108, 12);
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: #f3f3f3;
+        }
+        input[type="button"].on {
+            background-color: #14a143;
+        }
+
+        input[type="button"].off {
+            background-color: #cd0e0e;
+        }
+    </style>
+</head>  
+
+<body>
+<div id="gauge" class="200x160px"></div>
+<div id="gauge2" class="200x160px"></div>
+
+<script>
+var g = new JustGage({
+    id: "gauge",
+    value: 0,
+    min: 0,
+    max: 100,
+    title: "Grados C"
+});
+getReading();
+
+var g2 = new JustGage({
+    id: "gauge2",
+    value: 0,
+    min: 0,
+    max: 200,
+    title: "Humedad"
+});
+getReading2();
+
+</script>
+<br>
+	<center>
+		<button class="siguiente4"><a href ="Index.html"> Pagina Principal</a></button>
+	</center>
+	<br>
+	<br>
+	
+</body>
+</html>
